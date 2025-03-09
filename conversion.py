@@ -8,8 +8,6 @@ import datetime
 
 data_path = 'times.csv'
 time_data = pd.read_csv(data_path)
-#print(time_data.head())
-#sns.scatterplot(x = '800_Time', y = '1600_Time', data = time_data)
 
 x = time_data[['800_Time']]
 y = time_data[['1600_Time']]
@@ -34,16 +32,3 @@ if actual > expected_secs:
     print(f"Your score is {(actual-expected_secs)**2}, you should be a middle distance runner")
 else:
     print(f"Your score is {(expected_secs-actual)**2 * -1}, you should be a distance runner")
-
-""" x = np.array([5, 15, 25, 35, 45, 55]).reshape((-1, 1))
-y = np.array([5, 20, 14, 32, 22, 38])
-plt.plot(x, y)
-plt.show()
-
-print(x)
-print(y)
-
-model = LinearRegression().fit(x, y)
-r_sq = model.score(x, y)
-print(f"coefficient of determination: {r_sq}") """
-
